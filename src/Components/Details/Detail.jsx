@@ -32,8 +32,8 @@ const Detail = () => {
     phone,
     address,
   } = DetailsCart;
-const handleLocalStorage =(id) =>{
-    addToDb(id)
+const handleLocalStorage =(cart) =>{
+    addToDb(cart)
 }
   return (
     <div className="">
@@ -114,7 +114,7 @@ const handleLocalStorage =(id) =>{
               </div>
             </div>
           </div>
-          <button onClick={() => handleLocalStorage(id)} className="btn-primary">Apply bow</button>
+          <button onClick={() => handleLocalStorage(DetailsCart)} className="btn-primary">Apply bow</button>
         </div>
       </div>
     </div>
