@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from "react";
+import Home from "./Components/Home/Home";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
-  const [data , setData] = useState([])
-  useEffect(() => {
-    fetch('fakeData.json')
-    .then(res => res.json())
-    .then(data => setData(data))
-  },[])
- 
   return (
     <div>
-      {
-         data.map(product => <img src={product.Company_Logo} />)
-      }
+      <Header></Header>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   );
 };
