@@ -5,24 +5,19 @@ import {
   faCircleDollarToSlot,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const ShowAplliedJob = ({ data }) => {
   const {
     id,
     Company_Logo,
     Company_Name,
-    Educational_Requirements,
-    Experiences,
-    Job_Description,
-    Job_Responsibility,
     Job_location,
     Job_title,
     Job_type,
     Location,
     Salary,
-    email,
-    phone,
-    address,
   } = data;
+
   return (
     <div className="border p-3 mx-5 my-4">
       <div className="lg:flex justify-between items-center">
@@ -53,8 +48,9 @@ const ShowAplliedJob = ({ data }) => {
           </div>
         </div>
         {/* btn */}
-
+        <Link to={`Details/${id}`}>
           <button className="btn-primary">View Details</button>
+        </Link>
       </div>
     </div>
   );

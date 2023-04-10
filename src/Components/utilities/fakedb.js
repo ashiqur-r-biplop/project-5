@@ -18,7 +18,6 @@ const addToDb = (cart) => {
     storedCart.push(cart)
     localStorage.setItem("job-cart", JSON.stringify(storedCart))
   }
-
 };
 
 const removeFromDb = (id) => {

@@ -17,7 +17,7 @@ const AppliedJob = () => {
           </select>
         </div>
       </div>
-      {getData.map((data) => (
+      {getData?.map((data) => (
         <ShowAplliedJob data={data} key={data.id}></ShowAplliedJob>
       ))}
     </div>

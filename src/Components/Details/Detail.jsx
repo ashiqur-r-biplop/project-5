@@ -14,6 +14,7 @@ import { addToDb } from "../utilities/fakedb";
 
 const Detail = () => {
   const DetailsCart = useLoaderData();
+
   const {
     Educational_Requirements,
     Experiences,
