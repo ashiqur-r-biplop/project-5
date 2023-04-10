@@ -8,7 +8,9 @@ const App = () => {
   return (
     <div>
       <Header></Header>
-      <Outlet></Outlet>
+      <div className="md:min-h-[calc(100vh-293px)]">
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );

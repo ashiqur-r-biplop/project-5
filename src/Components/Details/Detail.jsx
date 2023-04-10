@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import OthersHeader from "../OthersHeader/OthersHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Detail.css";
@@ -14,19 +14,12 @@ import { addToDb } from "../utilities/fakedb";
 
 const Detail = () => {
   const DetailsCart = useLoaderData();
-  console.log(DetailsCart);
   const {
-    id,
-    Company_Logo,
-    Company_Name,
     Educational_Requirements,
     Experiences,
     Job_Description,
     Job_Responsibility,
-    Job_location,
     Job_title,
-    Job_type,
-    Location,
     Salary,
     email,
     phone,

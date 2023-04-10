@@ -34,11 +34,9 @@ const router = createBrowserRouter([
         path: 'Details/:id',
         element: <Detail></Detail>,
         loader: async ({params}) => {
-          // console(params)
           const res = await fetch('https://raw.githubusercontent.com/Ashiqur23/fake-Db-assignment/main/fakeData.json')
           const data = await res.json()
-          const singleData = data?.find(d => d.id == params.id)
-          // console.log(singleData)
+          const singleData = data?.find(d => d.id == params.id);
           return singleData;
         }
       }
