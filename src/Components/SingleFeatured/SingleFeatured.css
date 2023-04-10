@@ -1,0 +1,24 @@
+.card-img{
+    width: 120px;
+    height: 40px;
+}
+.cart-btn button{
+    font-weight: 600;
+    margin: 10px 10px 0px 0px; 
+    border: 2px solid #9873FF;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+.icons{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+.location-Grp .location{
+    width: 50%;
+}
+.location-Grp .Salary{
+    width: 50%;
+}

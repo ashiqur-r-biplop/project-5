@@ -8,12 +8,14 @@ const Featured = () => {
       .then((res) => res.json())
       .then((data) => setData(data.slice(0, 4)));
   }, []);
-  console.log(data);
+//   console.log(data);
   const handleSeeAll =() =>{
-    
-  }
+    fetch("fakeData.json")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+}
   return (
-    <div className="lg:mt-20 mt-10">
+    <div className="lg:mt-20 mt-10 mb-10">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-5">Featured Jobs</h1>
         <p>
@@ -22,7 +24,7 @@ const Featured = () => {
         </p>
       </div>
       <div>
-        <div className="mt-10 grid md:grid-cols-2 grid-cols=1">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 grid-cols=1">
           {data.map((singleData) => (
             <SingleFeatured
               singleData={singleData}
@@ -30,8 +32,8 @@ const Featured = () => {
             ></SingleFeatured>
           ))}
         </div>
-        <div className="text-center">
-        <button onClick={handleSeeAll} className="btn-primary">See All Jobs</button>
+        <div className={`text-center my-5 ${data.length > 4 ? 'hidden' : 'block'}`} id="seeAll">
+        <button onClick={handleSeeAll} className="btn-primary ">See All Jobs</button>
         </div>
       </div>
     </div>
