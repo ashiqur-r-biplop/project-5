@@ -13,7 +13,8 @@
         "Educational_Requirements": "Bachelor degree to complete any reputational university.",
         "Experiences": "2-3 Years in this field.",
         "phone": "+6050 6040 6660 55",
-        "email": "info@gmail.com"
+        "email": "info@gmail.com",
+        "address" : "Amazon Inc.410 Terry Avenue North Seattle, WA 98109,USA"
     },
     {
         "id": 2,
@@ -29,7 +30,8 @@
         "Educational_Requirements": "Some employers may also require a master's degree or a relevant professional certification, such as a Certified Analytics Professional (CAP) certification.",
         "Experiences": "5 year in this field",
         "phone": "+5500 6951 6750 50",
-        "email": "info@gmail.com"
+        "email": "info@gmail.com",
+        "address" : "Google Inc.1600 Amphitheatre Parkway Mountain View, CA 94043, USA"
     },
     {
         "id": 3,
@@ -45,7 +47,8 @@
         "Educational_Requirements": "Master's degree in marketing or related fields",
         "Experiences": "2-3 Years in this field.",
         "phone": "+5196 8526 6000 90",
-        "email": "info@gmail.com"
+        "email": "info@gmail.com",
+        "address" : "Netflix Inc.100 Winchester Circle Los Gatos, CA 95032 ,USA"
     },
     {
         "id": 4,
@@ -61,7 +64,8 @@
         "Educational_Requirements": "Bachelor's degree in a related field such as business, marketing, engineering, computer science, or a related field.",
         "Experiences": "2 Years in this field.",
         "phone": "+9940 8791 1958 00",
-        "email": "info@gmail.com"
+        "email": "info@gmail.com",
+        "address" : "Samsung Electronics Co Ltd 129 Samsung-ro, Yeongtong-gu Suwon-si, Gyeonggi-do 16677 South Korea"
     },
     {
         "id": 5,
@@ -77,10 +81,11 @@
         "Educational_Requirements": "Computer and Software",
         "Experiences": "8 years in this field",
         "phone": "+9991 8468  1680 80",
-        "email": "info@gmail.com"
+        "email": "info@gmail.com",
+        "address" : "Shopify Inc. 150 Elgin Street, 8th Floor Ottawa, ON K2P 1L4 Canada"
     },
     {
-        "id": 1,
+        "id": 6,
         "Company_Logo": "https://i.ibb.co/r3X1fxQ/yahoo.png",
         "Job_title": "Technical Program Manager",
         "Company_Name": "Yet Another Hierarchical Officious Oracle (Yahoo)",
@@ -93,6 +98,7 @@
         "Educational_Requirements": " bachelor's degree in Computer Science, Engineering, or a related field.",
         "Experiences": "6y years in this field",
         "phone": "+9110 9854 7842 80",
-        "email": "info@gmail.com"
+        "email": "info@gmail.com",
+        "address" : "Yahoo Inc. 701 First Ave Sunnyvale, CA 94089 USA"
     }
 ]

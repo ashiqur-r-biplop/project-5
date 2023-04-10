@@ -1,13 +1,13 @@
-import React from "react";
+import React, { createContext } from "react";
 import "./SingleFeatured.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleDollarToSlot,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const SingleFeatured = ({ singleData }) => {
-  console.log(singleData);
   const {
     id,
     Company_Logo,
@@ -40,7 +40,9 @@ const SingleFeatured = ({ singleData }) => {
             <p className="ms-2">{Salary}</p>
           </div>
         </div>
-        <button className="btn-primary">View Details</button>
+        <Link to={`Details/${id}`}>
+          <button className="btn-primary">View Details</button>
+        </Link>
       </div>
     </div>
   );

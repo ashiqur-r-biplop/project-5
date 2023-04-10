@@ -1,0 +1,28 @@
+.detail-contact{
+    background-color: #7e8ffe80;
+    padding: 20px;
+    
+}
+.detail-info p{
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.598);
+    margin-bottom: 10px;
+}
+.detail-info span{
+    color: black;
+}
+.Detail-icons{
+    color: #855fed;
+    margin-right: 5px;
+    border: 1px solid #855fed;
+    padding: 6px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+.items{
+    margin: 10px 0px;
+}
+.detail-cart h2 {
+    margin: 10px 0px;
+}

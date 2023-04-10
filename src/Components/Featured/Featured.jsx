@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import SingleFeatured from "../SingleFeatured/SingleFeatured";
+import Detail from "../Details/Detail";
 
 const Featured = () => {
   const [data, setData] = useState([]);
+  const [fullData, setFullData] = useState([]);
   useEffect(() => {
     fetch("fakeData.json")
       .then((res) => res.json())
-      .then((data) => setData(data.slice(0, 4)));
+      .then((data) => {
+        setData(data.slice(0, 4))
+        setFullData(data)
+      });
   }, []);
 //   console.log(data);
   const handleSeeAll =() =>{
-    fetch("fakeData.json")
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    setData(fullData)
 }
   return (
     <div className="lg:mt-20 mt-10 mb-10">
@@ -25,7 +28,7 @@ const Featured = () => {
       </div>
       <div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 grid-cols=1">
-          {data.map((singleData) => (
+          {data?.map((singleData) => (
             <SingleFeatured
               singleData={singleData}
               key={singleData.id}
