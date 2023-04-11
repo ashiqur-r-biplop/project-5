@@ -5,7 +5,7 @@ import {
   faCircleDollarToSlot,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const ShowAplliedJob = ({ data }) => {
   const {
     id,
@@ -17,7 +17,7 @@ const ShowAplliedJob = ({ data }) => {
     Location,
     Salary,
   } = data;
-
+  const navigate = useNavigate()
   return (
     <div className="border p-3 mx-5 my-4">
       <div className="lg:flex justify-between items-center">
@@ -48,9 +48,7 @@ const ShowAplliedJob = ({ data }) => {
           </div>
         </div>
         {/* btn */}
-        <Link to={`Details/${id}`}>
-          <button className="btn-primary">View Details</button>
-        </Link>
+          <button onClick={() => navigate(`/Details/${id}`)} className="btn-primary">View Details</button>
       </div>
     </div>
   );
