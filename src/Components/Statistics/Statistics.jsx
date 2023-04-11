@@ -1,5 +1,6 @@
 import React from "react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import OthersHeader from "../OthersHeader/OthersHeader";
 
 const Statistics = () => {
   const data = [
@@ -40,6 +41,7 @@ const Statistics = () => {
 
   return (
     <div>
+      <OthersHeader>Statistics</OthersHeader>
       <div className="mx-auto  border my-5 lg:w-11/12">
         <ResponsiveContainer width="100%" height={400}>
           <AreaChart

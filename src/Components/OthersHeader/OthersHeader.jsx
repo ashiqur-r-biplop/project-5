@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const OthersHeader = ({children}) => {
     // console.log(children)
   return (
