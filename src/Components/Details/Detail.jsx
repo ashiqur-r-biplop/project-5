@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigation, useParams } from "react-router-dom";
 import OthersHeader from "../OthersHeader/OthersHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Detail.css";
@@ -11,6 +11,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { addToDb } from "../utilities/fakedb";
+import LoadingSpinner from "../Loading-Spinner/LoadingSpinner";
 
 const Detail = () => {
   const DetailsCart = useLoaderData();
@@ -26,9 +27,13 @@ const Detail = () => {
     phone,
     address,
   } = DetailsCart;
-const handleLocalStorage =(cart) =>{
-    addToDb(cart)
-}
+  const handleLocalStorage = (cart) => {
+    addToDb(cart);
+  };
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   return (
     <div className="">
       <OthersHeader>Job Details</OthersHeader>
@@ -108,7 +113,12 @@ const handleLocalStorage =(cart) =>{
               </div>
             </div>
           </div>
-          <button onClick={() => handleLocalStorage(DetailsCart)} className="btn-primary">Apply bow</button>
+          <button
+            onClick={() => handleLocalStorage(DetailsCart)}
+            className="btn-primary"
+          >
+            Apply bow
+          </button>
         </div>
       </div>
     </div>

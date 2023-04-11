@@ -5,18 +5,23 @@ import Detail from "../Details/Detail";
 const Featured = () => {
   const [data, setData] = useState([]);
   const [fullData, setFullData] = useState([]);
+  const [lessData, setLessData] = useState([]);
   useEffect(() => {
     fetch("fakeData.json")
       .then((res) => res.json())
       .then((data) => {
-        setData(data.slice(0, 4))
-        setFullData(data)
+        setData(data.slice(0, 4));
+        setLessData(data.slice(0, 4));
+        setFullData(data);
       });
   }, []);
-//   console.log(data);
-  const handleSeeAll =() =>{
-    setData(fullData)
-}
+  //   console.log(data);
+  const handleSeeAll = () => {
+    setData(fullData);
+  };
+  const lessHandleSeeAll = () => {
+    setData(lessData);
+  };
   return (
     <div className="lg:mt-20 mt-10 mb-10">
       <div className="text-center">
@@ -35,8 +40,23 @@ const Featured = () => {
             ></SingleFeatured>
           ))}
         </div>
-        <div className={`text-center my-5 ${data.length > 4 ? 'hidden' : 'block'}`} id="seeAll">
-        <button onClick={handleSeeAll} className="btn-primary ">See All Jobs</button>
+        <div
+          className={`text-center my-5 ${data.length > 4 ? "hidden" : "block"}`}
+          id="seeAll"
+        >
+          <button onClick={handleSeeAll} className="btn-primary ">
+            See All Jobs
+          </button>
+        </div>
+        <div
+          className={`text-center my-5 ${
+            data.length === 6 ? "block" : "hidden"
+          }`}
+          id="seeAll"
+        >
+          <button onClick={lessHandleSeeAll} className="btn-primary ">
+            Show less
+          </button>
         </div>
       </div>
     </div>

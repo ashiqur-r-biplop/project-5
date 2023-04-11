@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import heroImg from "./../../assets/hero-img.png";
 import Categories from "../Categories/Categories";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../Loading-Spinner/LoadingSpinner";
 const Home = () => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   return (
     <div>
       <div className="bg-[#1e1e1e20]">

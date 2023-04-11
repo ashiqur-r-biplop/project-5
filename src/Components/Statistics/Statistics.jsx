@@ -1,44 +1,50 @@
 import React from "react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import OthersHeader from "../OthersHeader/OthersHeader";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../Loading-Spinner/LoadingSpinner";
 
 const Statistics = () => {
+
   const data = [
     {
       name: "Assignment - 01",
       Totat_number: "60",
-      pv: "60",
+      Marks: "60",
     },
     {
       name: "Assignment - 02",
-      pv: "60",
+      Marks: "60",
     },
     {
       name: "Assignment - 03",
-      pv: "60",
+      Marks: "60",
     },
     {
       name: "Assignment - 04",
-      pv: "60",
+      Marks: "60",
     },
     {
       name: "Assignment - 05",
-      pv: "60",
+      Marks: "60",
     },
     {
       name: "Assignment - 06",
-      pv: "60",
+      Marks: "60",
     },
     {
       name: "Assignment - 07",
-      pv: "60",
+      Marks: "60",
     },
     {
       name: "Assignment - 08",
-      pv: "60",
+      Marks: "60",
     },
   ];
-
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   return (
     <div>
       <OthersHeader>Statistics</OthersHeader>
@@ -52,12 +58,12 @@ const Statistics = () => {
           >
             <defs>
               <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                <stop offset="5%" stopColor="#9873FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#9873FF" stopOpacity={0} />
               </linearGradient>
               <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
+                <stop offset="5%" stopColor="#9873FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#9873FF" stopOpacity={0} />
               </linearGradient>
             </defs>
             <XAxis dataKey="name" />
@@ -67,14 +73,14 @@ const Statistics = () => {
             <Area
               type="monotone"
               dataKey="uv"
-              stroke="#8884d8"
+              stroke="#9873FF"
               fillOpacity={1}
               fill="url(#colorUv)"
             />
             <Area
               type="monotone"
-              dataKey="pv"
-              stroke="#82ca9d"
+              dataKey="Marks"
+              stroke="#9873FF"
               fillOpacity={1}
               fill="url(#colorPv)"
             />

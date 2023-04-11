@@ -1,7 +1,13 @@
 import React from "react";
 import OthersHeader from "../OthersHeader/OthersHeader";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../Loading-Spinner/LoadingSpinner";
 
 const Blogs = () => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   return (
     <div>
       <OthersHeader>Blogs Page</OthersHeader>

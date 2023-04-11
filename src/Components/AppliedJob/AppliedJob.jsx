@@ -3,6 +3,8 @@ import { getLocalStorage } from "../utilities/fakedb";
 import ShowAplliedJob from "../ShowAplliedJob/ShowAplliedJob";
 import "./AppliedJob.css";
 import OthersHeader from "../OthersHeader/OthersHeader";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../Loading-Spinner/LoadingSpinner";
 
 const AppliedJob = () => {
   const [applied, setApplied] = useState([]);
@@ -19,7 +21,10 @@ const AppliedJob = () => {
     const getData = getLocalStorage();
     setApplied(getData);
   };
-  // const
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   return (
     <div>
       <OthersHeader>Applied Jobs</OthersHeader>
