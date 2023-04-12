@@ -17,6 +17,7 @@ const Detail = () => {
   const DetailsCart = useLoaderData();
 
   const {
+    id,
     Educational_Requirements,
     Experiences,
     Job_Description,
@@ -27,8 +28,8 @@ const Detail = () => {
     phone,
     address,
   } = DetailsCart;
-  const handleLocalStorage = (cart) => {
-    addToDb(cart);
+  const handleLocalStorage = (id) => {
+    addToDb(id);
   };
   const navigation = useNavigation();
   if (navigation.state === "loading") {
@@ -114,7 +115,7 @@ const Detail = () => {
             </div>
           </div>
           <button
-            onClick={() => handleLocalStorage(DetailsCart)}
+            onClick={() => handleLocalStorage(id)}
             className="btn-primary"
           >
             Apply bow

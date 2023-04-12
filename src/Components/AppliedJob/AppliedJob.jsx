@@ -1,52 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { getLocalStorage } from "../utilities/fakedb";
 import ShowAplliedJob from "../ShowAplliedJob/ShowAplliedJob";
 import "./AppliedJob.css";
 import OthersHeader from "../OthersHeader/OthersHeader";
-import { useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import LoadingSpinner from "../Loading-Spinner/LoadingSpinner";
 
 const AppliedJob = () => {
-  const [applied, setApplied] = useState([]);
-  useEffect(() => {
-    const getData = getLocalStorage();
-    setApplied(getData);
-  }, []);
-  const handleOnsite = (data) => {
-    const getData = getLocalStorage();
-    const sortData = getData?.filter((a) => a.Job_location === data);
-    setApplied(sortData);
+  const savedAppliedJobs = useLoaderData();
+  const [jobs, setJobs] = useState(savedAppliedJobs);
+
+  console.log(jobs);
+
+  const handleFillter = (e) => {
+    const filerValue = e.target.value;
+    if (filerValue) {
+      const filterData = savedAppliedJobs.filter(
+        (singleData) => singleData.Job_location === filerValue
+      );
+      setJobs(filterData);
+    }
   };
-  const handleAllData = () => {
-    const getData = getLocalStorage();
-    setApplied(getData);
-  };
-  const navigation = useNavigation();
-  if (navigation.state === "loading") {
-    return <LoadingSpinner></LoadingSpinner>;
-  }
+
   return (
     <div>
       <OthersHeader>Applied Jobs</OthersHeader>
       <div className="sm:max-w-xl md:max-w-full my-5 lg:max-w-screen-xl mx-auto lg:my-20 md:my-10">
-        <div className="text-end flex flex-col md:flex-row ms-auto lg:w-max">
-          <button
-            className="btn-outlined"
-            onClick={() => handleOnsite("Onsite")}
+        <div className="text-end">
+          <select
+            onChange={handleFillter}
+            className="p-2 bg-[#F4F4F4] border rounded-lg shadow-sm outline-none focus:border-black"
           >
-            Onsite
-          </button>
-          <button
-            className="btn-outlined"
-            onClick={() => handleOnsite("Remote")}
-          >
-            Remote
-          </button>
-          <button className="btn-outlined" onClick={handleAllData}>
-            All Applied Jobs
-          </button>
+            <option value="">Filter By</option>
+            <option value="Onsite">Onsite</option>
+            <option value="Remote">Remote</option>
+          </select>
         </div>
-        {applied?.map((data) => (
+        {jobs?.map((data) => (
           <ShowAplliedJob data={data} key={data.id}></ShowAplliedJob>
         ))}
       </div>

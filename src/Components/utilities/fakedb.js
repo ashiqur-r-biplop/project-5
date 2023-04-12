@@ -1,42 +1,41 @@
-import { toast } from "react-hot-toast";
+import Swal from 'sweetalert2'
 
-// use local storage to manage cart data
-const addToDb = (cart) => {
-  console.log(cart)
-  let shoppingCart = JSON.parse(localStorage.getItem('job-cart'));
-  let storedCart = []
-  if(shoppingCart){
-    const alreadyAdded = shoppingCart?.find(d => d.id ==  cart.id)
-    if(alreadyAdded){
-      return toast.error('already added')
+const addToDb = id => {
+    let shoppingCart = getLocalStorage();
+    // add quantity
+    const quantity = shoppingCart[id];
+    if (!quantity) {
+        shoppingCart[id] = 1;
+        localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+        Swal.fire(
+            'Welcome!',
+            'You applied for this job',
+            'success'
+        )
     }
-    else{
-      let shoppingCart = JSON.parse(localStorage.getItem('job-cart'));
-      const remaining = [...shoppingCart , cart]
-      localStorage.setItem('job-cart', JSON.stringify(remaining))
+    else {
+        Swal.fire(
+            'Sorry!',
+            'You have already applied for this job',
+            'error'
+        )
     }
-  }
-  else{
-    storedCart.push(cart)
-    localStorage.setItem("job-cart", JSON.stringify(storedCart))
-  }
-};
+}
 
-const removeFromDb = (id) => {
-  const shoppingCart = getShoppingCart();
-  if (id in shoppingCart) {
-    delete shoppingCart[id];
-    localStorage.setItem("job-cart", JSON.stringify(shoppingCart));
-  }
-};
 
 const getLocalStorage = () => {
-  const getData = JSON.parse(localStorage.getItem("job-cart"));
-  return getData
-};
+    let shoppingCart = {};
 
-const deleteShoppingCart = () => {
-  localStorage.removeItem("job-cart");
-};
+    //get the shopping cart from local storage
+    const storedCart = localStorage.getItem('shopping-cart');
+    if (storedCart) {
+        shoppingCart = JSON.parse(storedCart);
+    }
+    return shoppingCart;
+}
 
-export { addToDb, removeFromDb, getLocalStorage, deleteShoppingCart };
+
+export {
+    addToDb,
+    getLocalStorage,
+}

@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "Company_Logo": "https://i.ibb.co/Phzgyd4/amazon.png",
         "Job_title": "Executive Recruiter",
         "Company_Name": "Amazon Inc.",
@@ -17,7 +17,7 @@
         "address" : "Amazon Inc.410 Terry Avenue North Seattle, WA 98109,USA"
     },
     {
-        "id": 2,
+        "id": "2",
         "Company_Logo": "https://i.ibb.co/KwpK9bd/google.png",
         "Job_title": "Data Analyst",
         "Company_Name": "Google LLC",
@@ -34,7 +34,7 @@
         "address" : "Google Inc.1600 Amphitheatre Parkway Mountain View, CA 94043, USA"
     },
     {
-        "id": 3,
+        "id": "3",
         "Company_Logo": "https://i.ibb.co/qjqdsg2/netflix.png",
         "Job_title": "Content Manager",
         "Company_Name": "Netflix Inc",
@@ -51,7 +51,7 @@
         "address" : "Netflix Inc.100 Winchester Circle Los Gatos, CA 95032 ,USA"
     },
     {
-        "id": 4,
+        "id": "4",
         "Company_Logo": "https://i.ibb.co/cTgHmJ3/samnsung.png",
         "Job_title": "Product Manager",
         "Company_Name": "Samsung Electronics Co Ltd",
@@ -68,7 +68,7 @@
         "address" : "Samsung Electronics Co Ltd 129 Samsung-ro, Yeongtong-gu Suwon-si, Gyeonggi-do 16677 South Korea"
     },
     {
-        "id": 5,
+        "id": "5",
         "Company_Logo": "https://i.ibb.co/LJdQv39/shopify.png",
         "Job_title": "Senior UX Designer",
         "Company_Name": "Shopify Inc",
@@ -85,7 +85,7 @@
         "address" : "Shopify Inc. 150 Elgin Street, 8th Floor Ottawa, ON K2P 1L4 Canada"
     },
     {
-        "id": 6,
+        "id": "6",
         "Company_Logo": "https://i.ibb.co/r3X1fxQ/yahoo.png",
         "Job_title": "Technical Program Manager",
         "Company_Name": "Yet Another Hierarchical Officious Oracle (Yahoo)",
